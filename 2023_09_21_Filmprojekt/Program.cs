@@ -21,6 +21,36 @@ namespace _2023_09_21_Filmprojekt
             Feladat02();
             Feladat03();
             Feladat04();
+            Feladat07();
+        }
+
+        private static void Feladat07()
+        {
+            Console.WriteLine($"A leggyakoribb mufan {GetLeggyakoribbMufaj()}");
+        }
+
+        private static object GetLeggyakoribbMufaj()
+        {
+            var mufajokGyakorisaga = new Dictionary<string, int>();
+            foreach (var film in filmek)
+            {
+                foreach (var mufaj in film.Mufaj)
+                {
+                    if (!mufajokGyakorisaga.ContainsKey(mufaj))
+                    {
+                        mufajokGyakorisaga.Add(mufaj, 1);
+                    }
+                    else
+                    {
+                        mufajokGyakorisaga[mufaj] += 1;
+                    }
+                }
+            }
+            foreach (KeyValuePair<string, int> mufaj in mufajokGyakorisaga)
+            {
+                Console.WriteLine($"{}");
+            }
+            return "";
         }
 
         private static void Feladat04()
