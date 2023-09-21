@@ -16,7 +16,7 @@ namespace _2023_09_21_Filmprojekt
 
         public Film(string sor)
         {
-            string[] adatok = sor.Split(',');
+            string[] adatok = sor.Split(';');
             this.helyezes = int.Parse(adatok[0].Substring(0, adatok[0].Length-1));
             this.cim = adatok[1];
             this.ev = int.Parse(adatok[2]);
